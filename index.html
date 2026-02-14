@@ -283,7 +283,7 @@
         <button class="btn" id="enter">دخول ❤️</button>
       </div>
 
-      <div class="hint">صيغة مثال: 18/07/2025</div>
+      
     </div>
   </div>
 
@@ -349,7 +349,6 @@
           </div>
         </div>
         <div class="small" style="margin-top:8px">
-          📌 إذا الصورة ما ظهرتش: روح للريبو → Add file → Upload files → حط الصورة وسمّيها <b>marwa.jpg</b>
         </div>
       </section>
 
@@ -379,7 +378,6 @@
 
       <section class="card">
         <h2>Compatibility Calculator 💞</h2>
-        <p class="small">ديرتها <b>فوق 100%</b> 😄</p>
 
         <div class="row" style="margin-bottom:10px">
           <div style="flex:1; min-width:220px">
@@ -787,24 +785,25 @@ function moonPhase(dateStr){
   const pct = Math.round(illum*100);
 
   let name = "—";
-  if(phase < 0.03 || phase > 0.97) name="New Moon (محاق)";
-  else if(phase < 0.22) name="Waxing Crescent (هلال متزايد)";
-  else if(phase < 0.28) name="First Quarter (تربيع أول)";
-  else if(phase < 0.47) name="Waxing Gibbous (أحدب متزايد)";
-  else if(phase < 0.53) name="Full Moon (بدر)";
-  else if(phase < 0.72) name="Waning Gibbous (أحدب متناقص)";
-  else if(phase < 0.78) name="Last Quarter (تربيع آخر)";
-  else name="Waning Crescent (هلال متناقص)";
-
+  if(phase < 0.03 || phase > 0.97) name="حب كامل 🌑❤️";
+else if(phase < 0.22) name="بداية قصة ✨";
+else if(phase < 0.28) name="أول وعد 🤍";
+else if(phase < 0.47) name="حب يكبر يوم بعد يوم 💕";
+else if(phase < 0.53) name="قمر مكتمل كي حبنا 🌕❤️";
+else if(phase < 0.72) name="شوق يزيد 🌙";
+else if(phase < 0.78) name="حنين دافئ 💞";
+else name="اشتياق خفيف 🤍";
   return {phase, pct, name};
 }
 const mp = moonPhase(CONFIG.moonDate);
-document.getElementById("moonName").textContent = mp.name;
-document.getElementById("moonPct").textContent  = `Illumination: ${mp.pct}%`;
-
+document.getElementById("moonName").textContent = "قمرنا اليوم: " + mp.name + " 🌙✨";
+document.getElementById("moonPct").textContent = "نسبة النور بيناتنا: " + mp.pct + "% 💞";
 const shadow = document.getElementById("moonShadow");
 const shift = (mp.phase <= 0.5) ? (30 - mp.phase*60) : (-30 + (mp.phase-0.5)*60);
 shadow.style.transform = `translateX(${shift}px)`;
+  document.querySelector(".small").textContent =
+"حتى القمر يشهد بلي حبنا يكبر كل ليلة أكثر 💖";
+  
 /* =========================
    Prize wheel
    ========================= */
